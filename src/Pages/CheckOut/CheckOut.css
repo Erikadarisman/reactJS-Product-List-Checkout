@@ -1,0 +1,8 @@
+.scroll{
+    overflow: scroll !important;
+    height: 200px !important;
+}
+
+.button-checkout > * {
+    margin: 0 5px 0 0;
+  }

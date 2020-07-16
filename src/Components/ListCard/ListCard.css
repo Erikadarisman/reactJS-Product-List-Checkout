@@ -1,0 +1,15 @@
+.input-number {
+  width: 75px !important;
+}
+
+.count-style {
+  display: contents;
+}
+
+.count-style > .btn {
+  width: 36px !important;
+}
+
+.count-style > * {
+  margin: 0 5px 0 0;
+}
