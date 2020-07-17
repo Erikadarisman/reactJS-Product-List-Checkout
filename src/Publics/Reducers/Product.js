@@ -35,18 +35,19 @@ const Product = (state = initialState, action) => {
       };
 
     case "CHANGE_PRODUCT":
-      if (
-        action.action == "min" &&
-        state.productList[action.index].jumlah == 0
-      ) {
-        //nothing
-      } else {
-        action.action == "plus"
-          ? (state.productList[action.index].jumlah += 1)
-          : (state.productList[action.index].jumlah -= 1);
-      }
+      let items, item;
+      items = [...state.productList];
+      item = { ...items[action.index] };
+      item.jumlah =
+        action.action === "plus"
+          ? (item.jumlah += 1)
+          : item.jumlah > 0
+          ? (item.jumlah -= 1)
+          : item.jumlah;
+      items[action.index] = item;
       return {
         ...state,
+        productList: items,
         total: state.productList.reduce((a, b) => a + (b["jumlah"] || 0), 0),
       };
 
