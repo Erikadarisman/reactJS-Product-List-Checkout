@@ -23,7 +23,7 @@ class CheckOut extends Component {
 
   handleBeli() {
     console.log("beli");
-    this.props.dispatch(beliProduct());
+    this.props.beliProduct();
     this.props.history.goBack();
   }
 
@@ -76,4 +76,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(CheckOut);
+const mapDispatchToProps = {
+  beliProduct
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(CheckOut);

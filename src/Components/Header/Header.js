@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 
-import { getAllProduct } from "../../Publics/Actions/Products";
 
 class Header extends Component {
   constructor(props) {
@@ -10,10 +9,6 @@ class Header extends Component {
     this.state = {
       jumlah: 0,
     };
-  }
-
-  tes() {
-    console.log(this.props.Product);
   }
 
   render() {

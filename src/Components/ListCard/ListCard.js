@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import "./ListCard.css";
-import { changeProduct } from "../../Publics/Actions/Products";
 import { connect } from "react-redux";
 
 class ListCard extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-  }
-
-  handleUpdate(index, action) {
-    this.props.dispatch(changeProduct(index, action));
   }
 
   render() {
@@ -25,7 +20,8 @@ class ListCard extends Component {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={() => this.handleUpdate(this.props.index, "min")}
+            //onClick={() => this.handleUpdate(this.props.index, "min")}
+            onClick={() => this.props.onClick(this.props.index, "min")}
             disabled={this.props.disabled}
           >
             -
@@ -39,7 +35,7 @@ class ListCard extends Component {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={() => this.handleUpdate(this.props.index, "plus")}
+            onClick={() => this.props.onClick(this.props.index, "plus")}
             disabled={this.props.disabled}
           >
             +
@@ -55,5 +51,7 @@ const mapStateToProps = (state) => {
     Product: state.Product,
   };
 };
+
+
 
 export default connect(mapStateToProps)(ListCard);
