@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   constructor(props) {
@@ -14,7 +14,9 @@ class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand">Product List</a>
+        <Link to="/" className="navbar-brand">
+          Product List
+        </Link>
         <div className="justify-content-end">
           <span className="navbar-text">
             Total Semua Produk: <b>{this.props.Product.total}</b>
